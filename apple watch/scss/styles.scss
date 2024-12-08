@@ -1,0 +1,61 @@
+//import
+@import"./mixins";
+
+@import"./mediaquery";
+
+@import"./variables";
+
+@import"./griddisplay";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: $whitecolor;
+}
+
+main{
+    height: 704px;
+}
+
+header{
+    @include navbar;
+}
+
+.hero{
+    @include hero;
+}
+
+
+.hero2{
+    @include hero2;
+}
+
+.hero3{
+    @include hero3;
+}
+
+.hero4 {
+    @include hero4(100%, 504px, 835px, 504px, 707px, 504px);
+}
+
+.space{
+    width: 100%;
+    height: 1000px;
+    background-color: $secbg;
+}
+
+.hero5{
+    @include hero5(100%, 530px, 800px, 530px, 814.2px, 530px);
+}
+
+.hero6{
+    @include hero6;
+}
+
+.hero7{
+    @include hero7;
+}

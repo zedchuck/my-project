@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .paravideo{
+            position: relative;
+            height: 300px;
+            padding: 50px 0px;
+        }
+
+        .paravideo video{
+            /* min-height: 100%; */
+            position: fixed;
+            top: 0;
+            z-index: -999;
+        }
+
+        .paracontent{
+            background-color: #030303;
+            padding: 50px 50px;
+        }
+
+        .paravideo2{
+            /* position: relative; */
+            height: 300px;
+            padding: 50px 0px;
+        }
+
+        .paravideo2 video{
+            min-height: 100%;
+            position: fixed;
+    
+            z-index: -999;
+        }
+
+        h1,h2,h3{
+            font-family: orbitron;
+            color: #fff;
+            text-shadow: 0 5px 10px #000;
+            text-align: center;
+
+        }
+        .caption{
+            position: absolute;
+            min-height: 100%;
+        }
+        h2{
+    
+            font-size: 50px;
+    
+        }
+    </style>
+</head>
+<body>
+    <div class="paravideo">
+        <video class="video1" autoplay loop muted plays-inline src="assets/vid/home-cycle-video.mp4" type="video/mp4"></video>
+        <div class="caption">
+            <h2>video background parallax</h2>
+        </div>
+    </div>
+
+    <div class="paracontent">
+        <div class="container">
+            <h3>parllax Effect Video Background</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iure doloribus eligendi commodi provident corrupti quidem assumenda. Maxime, ad est.</p>
+        </div>
+    </div>
+
+    <div class="paravideo2">
+        <video class="video1" autoplay loop muted plays-inline src="assets/vid/moon-walk.mp4" type="video/mp4"></video>
+        <h2>video background parallax</h2>
+    </div>
+    <div class="paracontent">
+        <div class="container">
+            <h3>parllax Effect Video Background</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iure doloribus eligendi commodi provident corrupti quidem assumenda. Maxime, ad est. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia magnam voluptatem vel accusantium dicta tempore libero nisi et dolor praesentium. Inventore temporibus architecto magni exercitationem repellat repellendus illo, dolores unde.</p>
+        </div>
+    </div>
+</body>
+</html>

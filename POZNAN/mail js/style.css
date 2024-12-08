@@ -1,0 +1,283 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+
+body {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	font-weight:300;
+	font-size: 12px;
+	line-height:30px;
+	color:#777;
+	background:linear-gradient(#09C,#b4b4b4);
+    height: 100vh;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+	max-width:400px;
+	width:100%;
+	margin:0 auto;
+	position:relative;
+
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+
+#contact {
+	background:#F9F9F9;
+	padding:25px;
+	margin:0px 0;
+     padding: 2rem 1.5rem;
+    border-radius: 1rem;
+}
+
+#contact h3 {
+	color: #F96;
+	display: block;
+	font-size: 1.5rem;
+	font-weight: 900;
+}
+
+#contact h3 span{
+	color: #F96;
+	display: block;
+	font-size: 1.3rem;
+	font-weight: 400;
+}
+
+#contact h4 {
+	margin:5px 0 15px;
+	display:block;
+	font-size:13px;
+}
+
+fieldset {
+	border: medium none !important;
+	margin: 0 0 15px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
+            width: 100%;
+            height: 40px;
+            padding: 0 1rem;
+            outline: none;
+            border: 0.05rem solid dimgray;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: 1s ease;
+}
+
+#contact input::placeholder {
+            color: #aaa;
+        }
+
+#contact input:focus {
+            border: 0.125rem solid #b4b4b4;
+            background-color: #b4b4b4;
+            color: white;
+            outline: #848484 solid 10px;
+            outline-offset: 10px;
+        } 
+
+
+        #contact input:focus::placeholder{
+            color: whitesmoke;
+        }
+
+#contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
+	-webkit-transition:border-color 0.3s ease-in-out;
+	-moz-transition:border-color 0.3s ease-in-out;
+	transition:border-color 0.3s ease-in-out;
+	border:1px solid #AAA;
+}
+
+#contact textarea {
+	height:70px;
+	max-width:100%;
+    resize:none;
+}
+
+#contact button {
+    width: 100%;
+    padding: 0.8rem 0;
+    outline: none;
+    border: none;
+    background-color:  skyblue;
+    cursor: pointer;
+    border-radius: 7px;
+    color: white;
+    font-size: 1.2rem;
+    transition: 1s ease;
+}
+
+#contact button:hover {
+	background-color:#09C;
+	-webkit-transition:background 0.3s ease-in-out;
+	-moz-transition:background 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out;
+}
+
+#contact button:active {
+     box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5);
+     }
+
+#contact input:focus, #contact textarea:focus {
+	outline:0;
+	border:1px solid #999;
+}
+::-webkit-input-placeholder {
+ color:#888;
+}
+:-moz-placeholder {
+ color:#888;
+}
+::-moz-placeholder {
+ color:#888;
+}
+:-ms-input-placeholder {
+ color:#888;
+}
+
+#check{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    font-size: 1rem;
+    color: #222;
+    margin-left: 6px;
+}
+
+
+.coin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.coin .usdt{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.coin .usdt h2{
+    font-size: 0.9rem;
+    color: black;
+    padding: 5px;
+}
+
+.warn{
+    width: 90%;
+    height: 50px;
+
+    background-color: rgba(125, 125, 197, 0.719);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.warn p{
+    margin-left: 3px;
+    font-size: 0.93rem;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip input{
+    display: none;
+}
+.tooltip button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+    border: none;
+    padding: 5px;
+}
+.tooltip button img{
+    background-color: rgba(125, 125, 197, 0.719);
+    width: 30px;
+    border-radius: 50px;
+    padding: 6px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#pay{
+    display: none;
+}
+
+.pend{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pend img{
+    padding: 20px;
+
+}
+
+#pend{
+    display: none;
+}

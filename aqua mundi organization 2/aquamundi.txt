@@ -1,0 +1,10 @@
+color scheme 
+  lavender
+navbar
+  -logo
+  
+  -home
+  -stories
+  -about
+  -join us
+  -donate

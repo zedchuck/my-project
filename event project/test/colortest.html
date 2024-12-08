@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        background-color:  #fafafa;
+      }
+
+      div{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-self: center;
+      }
+      .box {
+        width: 25%;
+        height: 250px;
+      }
+      .b1 {
+        background-color: #ff69b4;
+      }
+      .b2 {
+        background-color: #4fc3f7;
+      }
+      .b3 {
+        background-color: #fdff47;
+      }
+      .b4 {
+        background-color: #f6f6f6;
+      }
+      .b5 {
+        background-color: #f53563;
+      }
+      .b6 {
+        background-color: #4f94ff;
+      }
+      .b7 {
+        background-color: #ffdc64;
+      }
+      .b8 {
+        background-color: #212121;
+      }
+
+      .b9 {
+        background-color: #212121;
+      }.b10 {
+        background-color: #BF54FD;
+      }.b11 {
+        background-color: #E3E3E3;
+      }.b12 {
+        background-color: #FF69B4;
+      }.b13 {
+        background-color: #FDFF47;
+      }.b14 {
+        background-color: #F6F6F6;
+      }.b15 {
+        background-color: #F2EBD3;
+      }.b16 {
+        background-color: #A59781;
+      }
+
+      .text1{
+        color: #372A04;
+      }.text2{
+        color: #474754;
+      }.text3{
+        color: #511A1E;
+      }
+
+      /* body {
+  margin: 0;
+  padding: 0;
+  background: #efefef;
+} */
+
+.paper {
+  position: relative;
+  margin: 40px auto;
+  width: 400px;
+  height: 350px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.paper::before,
+.paper::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.7);
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.paper::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.paper::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.paper:hover::before,
+.paper:hover::after {
+  box-shadow: 0 2px 14px rgba(0,0,0,.4);
+}
+
+.paper:hover::before {
+  left: 5px;
+}
+
+.paper:hover::after {
+  right: 5px;
+}
+    </style>
+    <div>
+      <div class="box b1"></div>
+      <div class="box b2"></div>
+      <div class="box b3"></div>
+      <div class="box b4"></div>
+      <div class="box b5"></div>
+      <div class="box b6"></div>
+      <div class="box b7"></div>
+      <div class="box b8"></div>
+    </div>
+    <div>
+      <div class="box b9"></div>
+      <div class="box b10"></div>
+      <div class="box b11"></div>
+      <div class="box b12"></div>
+      <div class="box b13"></div>
+      <div class="box b14"></div>
+      <div class="box b15"></div>
+      <div class="box b16"></div>
+    </div>
+    <div>
+        <h1 class="text1">color test</h1>
+        <h1 class="text2">color test</h1>
+        <h1 class="text3">color test</h1>
+    </div>
+    <div class="paper"></div>
+  </body>
+</html>

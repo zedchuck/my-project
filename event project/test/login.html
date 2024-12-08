@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif !important;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #161623;
+      }
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#f00, #f0f);
+        clip-path: circle(30% at right 70%);
+        transition: 0.8s;
+      }
+      body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#2196f3, #f0f);
+        clip-path: circle(20% at 10% 10%);
+        transition: 0.8s;
+      }
+
+      body.signup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #161623;
+        transition: 0.8s;
+      }
+
+      body.signup::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#2196f3, #f0f);
+        clip-path: circle(20% at 10% 70%);
+        transition: 0.8s;
+      }
+
+      body.signup::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#f00, #f0f);
+        clip-path: circle(30% at right 10%);
+        transition: 0.8s;
+      }
+
+      body.signup .container .card {
+        height: 540px;
+      }
+
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        /* width: 100%; */
+        flex-wrap: wrap;
+        z-index: 1;
+      }
+      .container .card {
+        position: relative;
+        width: 350px;
+        height: 350px;
+        margin: 30px;
+        padding-top: 35px;
+        /* margin-top: 0px; */
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        /* overflow: hidden;  */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        transition: 1s;
+        /* overflow: hidden; */
+        /* left: -100%; */
+      }
+
+      form h2 {
+        /* margin-top: 60px; */
+        color: white;
+        /* position: absolute; */
+      }
+      /* .card .container {
+        height: 100%;
+        width: 100%;
+      } */
+      form {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        /* width: fit-content;
+        height: fit-content; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: 0.8s;
+        /* left: -100%; */
+        /* overflow: hidden; */
+      }
+
+      form#signin {
+        left: 0 !important;
+        transition: 0.5s;
+      }
+
+      body.signup form#signin {
+        left: -100% !important;
+        transition: 0.5s;
+      }
+
+      body.signup form#signupform {
+        left: 0 !important;
+        transition: 0.5s;
+      }
+
+      form#signupform {
+        left: 100%;
+        display: none;
+        transition: 0.5s;
+      }
+
+      .inputf {
+        width: 280px;
+        height: fit-content;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 25px;
+        transition: 0.5s;
+      }
+      .input {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        box-sizing: border-box;
+        padding: 15px;
+        padding-right: 50px;
+        border: none;
+        /* border: 1px solid rgba(255, 255, 255, 0.5); */
+        /* border: 0 0 3px 0 solid rgba(255, 255, 255, 0.5); */
+        outline: none;
+        /* box-shadow: inset 0 0 0 2px black; */
+        background: rgba(0, 0, 0, 0.15);
+        font-family: poppins;
+        color: white;
+        font-size: 18px;
+        letter-spacing: 2px;
+        border-radius: 8px;
+        /* z-index: 100; */
+      }
+
+      .imp {
+        position: absolute;
+        width: 280px;
+        height: 52px;
+        z-index: -2;
+        border-bottom: 3px solid red;
+        border-radius: 15px;
+        display: none;
+        transition: 0.5s;
+        /* background-color: #f00; */
+      }
+
+      .imc {
+        position: absolute;
+        width: 280px;
+        height: 52px;
+        z-index: -1000;
+        border-bottom: 3px solid red;
+        border-radius: 15px;
+        display: none;
+        mix-blend-mode: multiply;
+        transition: 0.5s;
+        /* background-color: #f00; */
+      }
+
+      .imq {
+        position: absolute;
+        width: 280px;
+        height: 52px;
+        z-index: -1000;
+        border-bottom: 3px solid red;
+        border-radius: 15px;
+        display: none;
+        mix-blend-mode: multiply;
+        transition: 0.5s;
+        /* background-color: #f00; */
+      }
+
+      .imx {
+        position: absolute;
+        width: 280px;
+        height: 52px;
+        z-index: -1000;
+        border-bottom: 3px solid red;
+        border-radius: 15px;
+        display: none;
+        mix-blend-mode: multiply;
+        transition: 0.5s;
+        /* background-color: #f00; */
+      }
+
+      .imw {
+        position: absolute;
+        width: 280px;
+        height: 52px;
+        z-index: -1000;
+        border-bottom: 3px solid red;
+        border-radius: 15px;
+        display: none;
+        mix-blend-mode: multiply;
+        transition: 0.5s;
+        /* background-color: #f00; */
+      }
+
+      .imz {
+        position: absolute;
+        width: 280px;
+        height: 52px;
+        z-index: -1000;
+        border-bottom: 3px solid red;
+        border-radius: 15px;
+        display: none;
+        mix-blend-mode: multiply;
+        transition: 0.5s;
+        /* background-color: #f00; */
+      }
+
+      .alt {
+        position: relative;
+        /* width: inherit; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between !important;
+      }
+
+      .alt a {
+        text-decoration: none;
+        color: rgb(212, 210, 210);
+        z-index: 100;
+      }
+
+      .inputf button {
+        width: inherit;
+        height: auto;
+        border: 2px solid black;
+        outline: none;
+        background: rgba(197, 197, 197, 0.596);
+        color: white;
+        padding: 10px 30px;
+        font-family: poppins;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.25s;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      .inputf button:hover {
+        outline: 3px solid yellow;
+        background: grey;
+      }
+      .light {
+        position: absolute;
+        right: 20px;
+        bottom: 12px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        /* z-index: 99; */
+      }
+      .light .torch-icon {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 26px;
+        color: white;
+        /* z-index: 110 !important; */
+      }
+      .beam {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translate(0, -50%);
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+        background: yellow;
+        width: 100vw;
+        height: 30vh;
+        mix-blend-mode: multiply;
+        z-index: 1000 !important;
+        transition: 0.2s ease-out;
+        transform-origin: 100% 50%;
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+      }
+      .beam.on {
+        max-height: 30vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <form action="" role="form" onsubmit="signIn(event);" autocomplete="off" id="signin">
+          <h2 class="inputf">LOGIN</h2>
+          <div class="inputf">
+            <input
+              type="email"
+              class="input"
+              id="username"
+              placeholder="Username"
+              required
+            />
+            <span class="imp"></span>
+          </div>
+
+          <div class="inputf">
+            <input
+              type="password"
+              class="input"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <span class="imc"></span>
+
+            <div class="light">
+              <img
+                src="../assets/flash1.png"
+                class="torch-icon off-icon"
+                data-state="off"
+                onclick="toggle(this)"
+              />
+              <div class="beam"></div>
+            </div>
+          </div>
+
+          <div class="inputf alt">
+            <a href="#" id="fpwd">Forgot password</a>
+            <a href="#" id="reg">New here ?</a>
+          </div>
+          <div class="inputf">
+            <button type="submit">Sign In</button>
+          </div>
+        </form>
+
+        <form
+          action=""
+          role="form"
+          onsubmit="signUp(event);"
+          autocomplete="off"
+          id="signupform"
+        >
+          <h2 class="inputf">REGISTRATION</h2>
+          <div class="inputf">
+            <input
+              type="text"
+              class="input"
+              name="fullname"
+              id="fullname"
+              placeholder="Full Name"
+              required
+            />
+            <span class="imw"></span>
+            <span id="nameErr"></span>
+          </div>
+
+          <div class="inputf">
+            <input
+              type="email"
+              class="input"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+            />
+            <span class="imz"></span>
+            <span id="emailErr"></span>
+          </div>
+
+          <div class="inputf">
+            <input
+              type="password"
+              class="input"
+              name="password1"
+              id="password1"
+              placeholder="Create Password"
+              required
+            />
+            <span class="imq"></span>
+            <span id="passwordErr"></span>
+
+            <!-- <div class="light">
+              <img
+                src="../assets/flash1.png"
+                class="torch-icon off-icon"
+                data-state="off"
+                onclick="toggle(this)"
+              />
+              <div class="beam"></div>
+            </div> -->
+          </div>
+
+          <div class="inputf">
+            <input
+              type="password"
+              class="input"
+              name="password2"
+              id="password2"
+              placeholder="Confirm Password"
+              required
+            />
+            <span class="imx"></span>
+
+            <!-- <div class="light">
+              <img
+                src="../assets/flash1.png"
+                class="torch-icon off-icon"
+                data-state="off"
+                onclick="toggle(this)"
+              />
+              <div class="beam"></div>
+            </div> -->
+          </div>
+
+          <div class="inputf alt">
+            <a href="#" id="fpwd">&nbsp;</a>
+            <a href="#" id="log"><b id="login">Already have an account?</b></a>
+          </div>
+          <div class="inputf">
+            <button type="submit">Register account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      //torch beam movement
+      let beam = document.querySelector(".beam");
+      document.addEventListener("mousemove", (event) => {
+        let mouseY = event.clientY;
+        let rotationRange = 8;
+        let rotationAngle =
+          (mouseY / window.innerHeight) * rotationRange - rotationRange / 2;
+        beam.style.transform = `translate(0%, -50%) rotate(${-rotationAngle}deg)`;
+      });
+
+      //torch beam movement
+      function toggle(img) {
+        let password = document.getElementById("password");
+
+        let torchIcon = document.getElementsByClassName("torch-icon")[0];
+
+        let state = torchIcon.getAttribute("data-state");
+
+        state = state === "on" ? "off" : "on";
+
+        torchIcon.src =
+          state === "on" ? "../assets/flash1.png" : "../assets/flash2.png";
+
+        torchIcon.setAttribute("data-state", state);
+
+        if (state === "on") {
+          password.setAttribute("type", "text");
+          password.style.color = "black";
+          // btn.innerText = "visibility";
+        } else {
+          password.setAttribute("type", "password");
+          password.style.color = "white";
+          // btn.innerText = "visibility_off";
+        }
+        beam.classList.toggle("on");
+      }
+
+      //validate color notice
+      //log in
+      let imp = document.querySelector(".imp");
+      let imc = document.querySelector(".imc");
+
+      // let imq = document.querySelector(".imq");
+
+      let password = document.getElementById("password");
+      let username = document.querySelector("#username");
+
+      if (username) {
+        username.addEventListener("focus", () => {
+          imp.style.display = "block";
+          console.log("username input has been focused");
+          username.style.borderRadius = "8px 8px 15px 15px";
+        });
+      }
+
+      if (password) {
+        password.addEventListener("focus", () => {
+          imc.style.display = "block";
+          password.style.borderRadius = "8px 8px 15px 15px";
+          console.log("password input has been focused");
+        });
+      }
+
+      username.addEventListener("input", (event) => {
+        const usernameinp = event.target.value;
+        if (usernameinp.length >= 4) {
+          imp.style.borderBottomColor = "green";
+          // imq.style.borderBottomColor = "green";
+          console.log("letters is above 4");
+
+          // imp.style.display = "block";
+          username.addEventListener("blur", () => {
+            imp.style.display = "block";
+          });
+        } else {
+          imp.style.borderBottomColor = "red";
+          console.log("letters is below 4");
+
+          username.addEventListener("blur", () => {
+            imp.style.display = "none";
+          });
+        }
+      });
+
+      password.addEventListener("input", (event) => {
+        const usernameinp = event.target.value;
+        if (usernameinp.length >= 8) {
+          imc.style.borderBottomColor = "green";
+          console.log("password letters is above 8");
+
+          password.addEventListener("blur", () => {
+            imc.style.display = "block";
+          });
+        } else {
+          imc.style.borderBottomColor = "red";
+          console.log("password letters is below 8");
+
+          password.addEventListener("blur", () => {
+            imc.style.display = "none";
+          });
+        }
+      });
+
+      //sign up
+      let imw = document.querySelector(".imw");
+      let imz = document.querySelector(".imz");
+      let imq = document.querySelector(".imq");
+      let imx = document.querySelector(".imx");
+
+      let fullname = document.querySelector("#fullname");
+      let email = document.querySelector("#email");
+      let password1 = document.getElementById("password1");
+      let password2 = document.getElementById("password2");
+
+      // full name for sign up
+      if (fullname) {
+        fullname.addEventListener("focus", () => {
+          imw.style.display = "block";
+          console.log("fullname input has been focused");
+          fullname.style.borderRadius = "8px 8px 15px 15px";
+        });
+      }
+
+      fullname.addEventListener("input", (event) => {
+        const usernameinp = event.target.value;
+        if (usernameinp.length >= 4) {
+          imw.style.borderBottomColor = "green";
+          // imw.style.borderBottomColor = "green";
+          console.log("fullname letters is above 4");
+
+          fullname.addEventListener("blur", () => {
+            imw.style.display = "block ";
+          });
+        } else {
+          imw.style.borderBottomColor = "red";
+          console.log("fullname letters is below 4");
+
+          fullname.addEventListener("blur", () => {
+            imw.style.display = "none";
+          });
+        }
+      });
+
+      //email for sign up
+
+      if (email) {
+        email.addEventListener("focus", () => {
+          imz.style.display = "block";
+          console.log("email input has been focused");
+          email.style.borderRadius = "8px 8px 15px 15px";
+        });
+      }
+
+      email.addEventListener("input", (event) => {
+        const usernameinp = event.target.value;
+        if (usernameinp.length >= 11) {
+          imz.style.borderBottomColor = "green";
+          // imz.style.borderBottomColor = "green";
+          console.log("email letters is above 11");
+
+          email.addEventListener("blur", () => {
+            imz.style.display = "block";
+          });
+        } else {
+          imz.style.borderBottomColor = "red";
+          console.log("email letters is below 11");
+
+          email.addEventListener("blur", () => {
+            imz.style.display = "none";
+          });
+        }
+      });
+
+      //password 1 for sign up
+
+      if (password1) {
+        password1.addEventListener("focus", () => {
+          imq.style.display = "block";
+          console.log("password1 input has been focused");
+          password1.style.borderRadius = "8px 8px 15px 15px";
+        });
+      }
+
+      password1.addEventListener("input", (event) => {
+        const usernameinp = event.target.value;
+        if (usernameinp.length >= 8) {
+          imq.style.borderBottomColor = "green";
+          // imq.style.borderBottomColor = "green";
+          console.log("password1 letters is above 8");
+
+          password1.addEventListener("blur", () => {
+            imq.style.display = "block";
+          });
+        } else {
+          imq.style.borderBottomColor = "red";
+          console.log("password1 letters is below 8");
+
+          password1.addEventListener("blur", () => {
+            imq.style.display = "none";
+          });
+        }
+      });
+
+      //password 2 for sign up
+
+      if (password2) {
+        password2.addEventListener("focus", () => {
+          imx.style.display = "block";
+          console.log("password2 input has been focused");
+          password2.style.borderRadius = "8px 8px 15px 15px";
+        });
+      }
+
+      password2.addEventListener("input", (event) => {
+        const pwdV = password2.value;
+        if (pwdV === password1.value) {
+          imx.style.borderBottomColor = "green";
+          imx.style.borderBottomColor = "green";
+          console.log("password2 and password1 are the same");
+
+          password2.addEventListener("blur", () => {
+            imx.style.display = "block";
+          });
+        } else {
+          imx.style.borderBottomColor = "red";
+          console.log("not same");
+
+          password2.addEventListener("blur", () => {
+            imx.style.display = "none";
+          });
+        }
+      });
+
+      let signup = document.querySelector("#reg");
+      let signin = document.querySelector("#log");
+      let body = document.querySelector("body");
+      let cardover = document.querySelector(".card");
+      let reghide = document.querySelector("#signupform");
+
+      signup.onclick = function () {
+        body.classList.add("signup");
+        cardover.style.overflow = "hidden";
+        console.log("sign up clicked");
+        reghide.style.display = "flex";
+      };
+
+      signin.onclick = function () {
+        body.classList.remove("signup");
+        // cardover.style.transitionDelay = "4s";
+        cardover.style.overflow = "visible";
+        console.log("login clicked");
+        reghide.style.display = "none";
+      };
+
+      //creating the account to local storage
+      // let fullnameV = document.querySelector("#fullname").value;
+      // let emailV = document.querySelector("#email").value;
+      // let password1V = document.getElementById("password1").value;
+      // let password2V = document.getElementById("password2").value;
+
+      const signUp = (e) => {
+        let fullnameV = document.querySelector("#fullname").value;
+        let emailV = document.querySelector("#email").value;
+        let pwd1 = document.getElementById("password1").value;
+        let pwd2 = document.getElementById("password2").value;
+        let nameErr= document.getElementById("nameErr")
+        let emailErr= document.getElementById("emailErr")
+        let passwordErr = document.getElementById("passwordErr")
+
+        let valid = true;
+
+        if (fullname.trim() === ''){
+          nameErr.style.display = 'block';
+          valid = false;
+        }else{
+          nameErr.style.display = 'none';
+        }
+
+        if (email.trim() === '' || !validatedEmail(email)){
+          emailErr.style.display = 'block';
+          valid = false;
+        }else{
+          emailErr.style.display = 'none';
+        }
+
+        if (password.trim().length < 8 || !/[A-Z]/ || !/[a-z]/ === ''){
+          passwordErr.style.display = 'block';
+          valid = false;
+        }else{
+          passwordErr.style.display = 'none';
+        }
+
+        let formData = JSON.parse(localStorage.getItem("formData")) || []; //STORE VALUE IN FORMDATA KEY OR EMPTY VALUE
+
+        let exist =
+          formData.length &&
+          JSON.parse(localStorage.getItem("formData")).some(
+            (data) => data.emailV.toLowerCase() == emailV.toLowerCase()
+          ); //some
+        if (!exist) {
+          formData.push({ fullnameV, emailV, pwd2, username });
+
+          localStorage.setItem("formData", JSON.stringify(formData)); //STRINGIFY CONVERTS JSON FILE TO STRING
+          document.querySelector("form").reset();
+          alert("Account Created");
+        } else {
+          alert("Duplicate Email");
+        }
+
+        if (!valid){
+        e.preventDefault();
+        }
+
+        function validatedEmail(email){
+          let result = /\S+@\S+\.\S+/;
+          return result
+        }
+      };
+
+      function signIn(e) {
+        let emailV = document.getElementById("username").value;
+        let pwdV = document.getElementById("password").value;
+
+        let formData = JSON.parse(localStorage.getItem("formData")) || [];
+        let exist =
+          formData.length &&
+          JSON.parse(localStorage.getItem("formData")).some(
+            (data) =>
+              data.emailV.toLowerCase() == emailV.toLowerCase() &&
+              data.pwd2.toLowerCase() == pwdV.toLowerCase()
+          );
+        if (!exist) {
+          alert("Incorrect Login Details");
+        } else {
+          location.href = "../index.html";
+        }
+
+        e.preventDefault();
+      }
+    </script>
+  </body>
+</html>

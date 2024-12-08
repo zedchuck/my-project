@@ -1,0 +1,48 @@
+// @import "./mixins";
+
+@import "./variables";
+
+
+$breakpoint:(
+    "xs": 0,
+    "sm": 480px,
+    "md": 720px,
+    "lg": 990px,
+    "xl": 1200px,
+);
+
+@mixin xs{
+    @media (max-width: map-get($breakpoint, "xs")){
+        @content;
+    }
+}
+
+@mixin sm{
+    @media (max-width: map-get($breakpoint, "sm")){
+        @content;
+    }
+}
+
+@mixin md{
+    @media (max-width: map-get($breakpoint, "md")){
+        @content;
+    }
+}
+
+@mixin lg{
+    @media (max-width: map-get($breakpoint, "lg")){
+        @content;
+    }
+}
+
+@mixin xl{
+    @media (max-width: map-get($breakpoint, "xl")){
+        @content;
+    }
+}
+
+@mixin breakpoint($bp: 0){
+    @media (max-width: $bp) {
+        @content
+    }
+}

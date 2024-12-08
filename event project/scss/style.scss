@@ -1,0 +1,49 @@
+@import "./mixins";
+
+@import "./media";
+
+@import "./var";
+
+// @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+
+:root{
+    --size: 1;
+    --background: #000;
+    --color1: #d25778;
+    --color2: #ec585c;
+    --color3: #e7d155;
+    --color4: #56a8c6;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Outfit', sans-serif !important;
+}
+body{
+    @include body;
+}
+
+header {
+    @include header;
+}
+
+section {
+    @include section;
+}
+
+.color-mode{
+    @include colorMode;
+}
+
+
+.loginPageH{
+    @include loginPageH;
+}
+// .logup{
+//     @include logup;
+// }
+// .center{
+//     @include click;
+// }

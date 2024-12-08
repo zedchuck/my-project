@@ -1,0 +1,240 @@
+.ticket{
+    width: 400px;
+    height: 200px;
+    margin: 100px auto;
+    position: absolute;
+    top: 20px;
+    /* transition: all 300ms cubic-bezier(0.03, 0.93, 0.53, 0.99) 0s; */
+    /* // border: 5px solid #fff;
+    // gradient code below */
+    padding: 5px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: rgba(63, 59, 59, 0.8);
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
+    /* border-left: 1px solid rgba(255, 255, 255, 0.5); */
+    /* background: linear-gradient(to right,var(--color1),var(--color2),var(--color3),var(--color4)); */
+    border-radius: 20px;
+    /* transform: rotate(90deg); */
+    overflow: hidden;
+    z-index: 100;
+    /* transform-style: preserve-3d; */
+    /* transition: 5s; */
+}
+
+.ticket-holder :hover .c1{
+    transform: translateZ(10px) translate(130px, 80px) rotate(120deg) scale(1.1) !important;
+    transition: 1.9s ease;
+}
+
+.ticket-holder:hover .c2{
+    transform: translateZ(15px) translate(60px, 60px) rotate(105deg) scale(1.1) !important;
+    transition: 1.6s ease;
+}
+
+.ticket-holder:hover .c3{
+    transform: translateZ(20px) translate(0px,60px) rotate(90deg) scale(1.1) !important;
+    transition: 1.3s ease;
+}
+
+.ticket-holder:hover .c4{
+    transform: translateZ(25px) translate(-60px, 60px) rotate(75deg) scale(1.1) !important;
+    transition: 1s ease;
+}
+
+.ticket-holder:hover .c5{
+    transform: translateZ(30px) translate(-130px, 80px) rotate(60deg) scale(1.1) !important;
+    transition: 0.7s ease;
+}
+
+/* // to half circles on the card */
+/* .ticket-visual_visual::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 130px;
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color1);
+    z-index: 2;
+} */
+
+/* .ticket-visual_visual::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 130px;
+    right: -30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color4);
+    z-index: 2;
+} */
+
+.ticket-wrapper{
+    width: 100%; 
+    height: 100%;
+    /* background: var(--background); */
+    border-radius: 15px;
+    position: relative;
+}
+
+/* .ticket-wrapper::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 130px;
+    left: -30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--background);
+    z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+} */
+
+/* .ticket-wrapper::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 75px;
+    right: -30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--background);
+    z-index: 23;
+} */
+
+/* border: 1px solid rgba(255, 255, 255, 0.5); */
+
+/* .ticket-wrapper::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 75px;
+    left: -30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--background);
+    z-index: 23;
+    
+} */
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+
+
+.ticket-pro{
+    padding: calc(20px * var(--size)) 
+             calc(125px * var(--size))
+             calc(20px * var(--size))
+             calc(38px * var(--size));
+}
+
+.ticket-profile{
+    display: flex;
+    flex-direction: row;     
+}
+
+.ticket-event {
+    margin-top: 25px;
+    margin-left: -10px;
+}
+
+.profile-image{
+    width: 52px;
+    height: 52px;
+    margin: 10px 0 5px 20px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: calc(20px * var(--size));
+    margin:  7px 0 5px 10px;
+    font-weight: 700;
+    color: white;
+}
+
+.profile-username{
+    margin: 0 0 3px 10px;
+    color: #8a8f98;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile-icon img{
+    width: 18px;
+    height: 18px;
+}
+
+.ticket-number-wrapper{
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+}
+
+.ticket-number{
+    transform: rotate(90deg) translateY(calc(50px * var(--size)));
+    transform-origin: bottom right;
+    font-size: calc(30px * var(--size));
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 35px;
+    width: 210px;
+    border-bottom: 2px dashed #fff ;
+    color: white;
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* // cutting the circle in halves  */
+.left, .right{
+    position: absolute;
+    top: 110px;
+    width: 50px;
+    height: 100px;
+    background: var(--background);
+    z-index: 23;
+}
+
+.left{
+    left: -50px;
+}
+
+.right{
+    right: -50px;
+}
+
+.c1{
+    transform: translateZ(10px) translate(130px, 80px) rotate(120deg);
+    /* z-index: 10; */
+    
+}
+
+.c2{
+    transform: translateZ(15px) translate(60px, 60px) rotate(105deg);
+    /* z-index: 15; */
+    
+}
+
+.c3{
+    transform: translateZ(20px) translate(0px,60px) rotate(90deg);
+    /* z-index: 20; */
+    
+}
+
+.c4{
+    transform: translateZ(25px) translate(-60px, 60px) rotate(75deg);
+    /* z-index: 25; */
+    /* transform: translateZ(25px) scaleY(0); */
+    /* transition: 0.5s; */
+}
+
+.c5{
+    transform: translateZ(30px) translate(-130px, 80px) rotate(60deg);
+    /* z-index: 30; */
+    /* transform: translateZ(30px) scaleY(0); */
+    
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #343434;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card{
+            width: 270px;
+            height: 450px;
+            background-color: aquamarine;
+            border-radius: 50px;
+            display: flex;
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text{
+            position: relative;
+            font-size: 30px;
+            color: transparent;
+            font-weight: 700;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            /* width: 100%; */
+            font-family: 'Courier New', Courier, monospace;
+            -webkit-text-stroke: 0.5px #333;
+
+        }
+        /* .text2{
+            position: absolute;
+            font-size: 30px;
+            color: goldenrod;
+            font-weight: 700;
+            text-align: center;
+            width: 0;
+            top: 230px;
+            font-family: 'Courier New', Courier, monospace;
+            -webkit-text-stroke: 0.5px goldenrod;
+
+        } */
+
+        /* .card:hover .text2{
+            position: absolute;
+            width: 100%;
+        } */
+
+        .text::before{
+            content: attr(data-text);
+            position: absolute;
+            width: 0%;
+            overflow: hidden;
+            color: goldenrod;
+            text-align: center;
+            transition: 1s;
+            border-right: 8px solid gold;
+            -webkit-text-stroke: 0.5px goldenrod;
+
+        }
+
+        .card:hover .text::before{
+            width: 100%;
+            transition: 1s;
+            filter: drop-shadow(0 0 25px goldenrod);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="text" data-text="&nbsp;Explore&nbsp;">&nbsp;Explore&nbsp;</div>
+        <!-- <div class="text2" data-text="Explore">Explore</div> -->
+    </div>
+</body>
+</html>

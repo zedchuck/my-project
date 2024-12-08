@@ -1,0 +1,10 @@
+body {
+  background-color: purple;
+}
+
+header nav {
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  justify-items: space-between;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .video{
+            height: 700px;
+            padding: 50px 0px;
+            z-index: -1;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        .video video{
+            min-height: 100%;
+            position: fixed;
+            left: 0;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            /* bottom: 0; */
+            right: 0;
+            z-index: -1;
+        }
+
+        .content,.content2{
+            background-color: black;
+            padding: 50px 50px;
+            height: 400px;
+            z-index: ;
+        }
+
+        h2,p{
+            color: white;
+        }
+
+        .video2{
+            height: 700px;
+            padding: 50px 0px;
+            z-index: -2;
+        }
+        .video2 video{
+            min-height: 100%;
+            position: fixed;
+            top: 0;
+            /* bottom: 0; */
+            bottom: 0;
+            z-index: -2;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="video" >
+        <video class="video1" id="video" autoplay loop muted plays-inline src="assets/vid/home-cycle-video.mp4" type="video/mp4"></video>
+    </div>
+    <div class="content">
+         <h2>conetnt shit</h2>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus tenetur voluptate distinctio tempore veritatis ducimus provident sint illo quasi alias.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed eaque totam veniam tempora necessitatibus eum unde aliquid, asperiores ipsum sunt ut voluptate beatae laboriosam minus voluptatem nam? Veritatis, similique nesciunt!</p>
+    </div>
+    <div class="video2">
+        <video class="video1" autoplay loop muted plays-inline src="assets/vid/header-loop.mp4" type="video/mp4"></video>
+    </div>
+    <div class="content2">
+        <h2>conetnt shit</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus tenetur voluptate distinctio tempore veritatis ducimus provident sint illo quasi alias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus officiis aliquam consequatur ab sunt consequuntur voluptatem aliquid vel perspiciatis distinctio dicta dignissimos non quia assumenda, autem facilis omnis veritatis nostrum.</p>
+   </div>
+   <!-- <script>
+    // $(window).bind('scroll', function(){
+    //     if($(window).scrollTop() => 700) {
+    //         $('#video').hide();
+    //     }
+    //     else{
+    //         $('#video').show();
+    //     }
+    // });
+
+    console.log(window.scrollY);
+</script> -->
+
+<script src="test.js
+"></script>
+
+</body>
+</html>

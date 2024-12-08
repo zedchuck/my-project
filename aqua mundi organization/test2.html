@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,h2,h3{
+            font-family: orbitron;
+            color: #fff;
+            text-shadow: 0 5px 10px #000;
+            text-align: center;
+
+        }
+        h2{
+            position: absolute;
+            font-size: 50px;
+            height: 400px;
+        }
+
+        h3{
+            font-size: 40px;
+        }
+
+        p{
+            font-family: arial;
+            color: #fff;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .paraimage{
+            width: 100%;
+            height: 400px;
+            background-attachment: fixed;
+            background-size: 1005 100%;
+            padding: 100% 0px;
+        }
+
+        .bg1{
+            background-image: url(assets/img/teamtrucks.jpg);
+        }
+
+        .bg2{
+            background-image: url(assets/img/trees.webp);
+        }
+        .paracontent{
+            background-color: #030303;
+            padding: 50px 50px;
+            height: 400px;
+        }
+
+        .paravideo{
+            height: 700px;
+            padding: 50px 0px;
+            z-index: -1;
+        }
+
+        .paravideo video{
+            min-height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+        
+            z-index: -1;
+        }
+        .caption{
+            position: relative;
+            height: 1000px;
+            width: 100%;
+            top: 0;
+            background-color: transparent;
+        }
+        .paravideo2{
+            height: 700px;
+            padding: 50px 0px;
+            position: relative;
+            top: 700px;
+            z-index: 4;
+        }
+        .paravideo2 video{
+            min-height: 100%;
+            position: fixed;
+            /* top: 100%;; */
+            z-index: 4;
+        }
+            
+    </style>
+</head>
+<body>
+    <!-- <div class="paraimage bg1">
+        <div class="container"><h1>parllax Effect Video Background</h1></div>
+    </div> -->
+    <!--  -->
+    <!-- <div class="paracontent">
+        <div class="container">
+            <h3>parllax Effect Video Background</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iure doloribus eligendi commodi provident corrupti quidem assumenda. Maxime, ad est.</p>
+        </div> -->
+    <!-- </div> -->
+
+    <div class="paravideo">
+        <video class="video1" autoplay loop muted plays-inline src="assets/vid/home-cycle-video.mp4" type="video/mp4"></video>
+        <div class="caption"><h2>video background parallax</h2></div>
+        
+    </div>
+    
+    <div class="paracontent">
+        <div class="container">
+            <h3>parllax Effect Video Background</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iure doloribus eligendi commodi provident corrupti quidem assumenda. Maxime, ad est.</p>
+        </div>
+    </div>
+
+    <div class="paravideo2">
+        <video class="video1" autoplay loop muted plays-inline src="assets/vid/header-loop.mp4" type="video/mp4"></video>
+        <div class="caption"><h2>video background parallax</h2></div>
+        
+    </div>
+    <div class="paracontent">
+        <div class="container">
+            <h3>parllax Effect Video Background</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iure doloribus eligendi commodi provident corrupti quidem assumenda. Maxime, ad est.</p>
+        </div>
+    </div>
+    <div class="paraimage bg2">
+        <div class="container"><h1>parllax Background Effect Video</h1></div>
+    </div>
+    <div class="paracontent">
+        <div class="container">
+            <h3>parllax Effect Video Background</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum iure doloribus eligendi commodi provident corrupti quidem assumenda. Maxime, ad est.</p>
+        </div>
+    </div>
+    <div class="paravideo2">
+        <video class="video1" autoplay loop muted plays-inline src="assets/vid/header-loop.mp4" type="video/mp4"></video>
+        <div class="caption"><h2>video background parallax</h2></div>
+        
+    </div>
+
+
+</body>
+</html>

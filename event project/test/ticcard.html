@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #666;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        /* overflow: hidden; */
+        display: flex;
+        flex-direction: column;
+      }
+
+      :root {
+        --size: 1;
+        --background: #000;
+        --color1: #d25778;
+        --color2: #ec585c;
+        --color3: #e7d155;
+        --color4: #56a8c6;
+      }
+      .ticket-card {
+        color: white;
+        font-family: "Outfit", sans-serif !important;
+        /* margin-bottom: 700px !important; */
+        /* z-index: 1000 !important; */
+        width: 100%;
+        height: 700px;
+        /* // implement hover animation with javascript */
+      }
+
+      .ticket-visual_visual {
+        width: 650px;
+        height: 320px;
+        margin: 100px auto;
+        position: relative;
+        transition: all 300ms cubic-bezier(0.03, 0.93, 0.53, 0.99) 0s;
+        /* // border: 5px solid #fff; */
+        /* // gradient code below */
+        padding: 5px;
+        background: linear-gradient(
+          to right,
+          var(--color1),
+          var(--color2),
+          var(--color3),
+          var(--color4)
+        );
+        border-radius: 20px;
+      }
+      /* // to half circles on the card */
+      .ticket-visual_visual::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 130px;
+        left: -30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--color1);
+        z-index: 2;
+      }
+
+      .ticket-visual_visual::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 130px;
+        right: -30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--color4);
+        z-index: 2;
+      }
+
+      .ticket-visual-wrapper {
+        width: 100%;
+        height: 100%;
+        background: var(--background);
+        border-radius: 15px;
+        position: relative;
+      }
+
+      .ticket-visual-wrapper::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 130px;
+        left: -30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #666;
+        z-index: 3;
+      }
+
+      .ticket-visual-wrapper::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 130px;
+        right: -30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #666;
+        z-index: 3;
+      }
+
+      .ticket-visual_profile {
+        padding: calc(39px * var(--size)) calc(155px * var(--size))
+          calc(39px * var(--size)) calc(58px * var(--size));
+      }
+
+      .ticket-profile_profile {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .ticket-event {
+        margin-top: 25px;
+        margin-left: -10px;
+      }
+
+      .ticket-profile_image {
+        width: 82px;
+        height: 82px;
+        /* // margin: 10px 0 5px 20px; */
+        border-radius: 50%;
+      }
+
+      .ticket-profile_name {
+        font-size: calc(32px * var(--size));
+        margin: 10px 0 5px 20px;
+        font-weight: 700;
+      }
+
+      .ticket-profile_username {
+        margin: 0 0 5px 20px;
+        color: #8a8f98;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .ticket-profile_githubicon img {
+        width: 18px;
+        height: 18px;
+      }
+
+      .ticket-visual_ticket-number-wrapper {
+        position: absolute;
+        right: 35px;
+        bottom: 0;
+      }
+
+      .ticket-visual_ticket-number {
+        transform: rotate(90deg) translateY(calc(100px * var(--size)));
+        transform-origin: bottom right;
+        font-size: calc(40px * var(--size));
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 35px;
+        width: 310px;
+        border-bottom: 2px dashed #333;
+        color: white;
+        font-family: "Outfit", sans-serif !important;
+      }
+
+      /* // cutting the circle in halves  */
+      .left,
+      .right {
+        position: absolute;
+        top: 110px;
+        width: 50px;
+        height: 100px;
+        background-color: #666;
+        z-index: 4;
+      }
+
+      .left {
+        left: -50px;
+      }
+
+      .right {
+        right: -50px;
+      }
+
+      /* burst effect */
+      .center {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .click-effect {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+      .spike {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform-origin: bottom;
+        width: 0;
+        height: 0;
+        background: white;
+        border-radius: 0.3rem;
+        transform: rotate(var(--angle)) translateY(var(--distance));
+        z-index: 10;
+        /* // animation: animate 0.75s infinite; */
+      }
+
+      .effect .spike {
+        animation: animate 0.75s;
+      }
+
+      @keyframes animate {
+        0% {
+          width: 3px;
+          height: 12px;
+          opacity: 0;
+          transform: rotate(var(--angle)) translateY(0);
+        }
+
+        2% {
+          width: 4px;
+          height: 16px;
+          opacity: 1;
+          transform: rotate(var(--angle)) translateY(0);
+        }
+
+        100% {
+          width: 0px;
+          height: 0px;
+          opacity: 1;
+          transform: rotate(var(--angle)) translateY(var(--distance));
+        }
+      }
+
+      .container {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 300px !important; */
+        background-color: red;
+        position: relative;
+        /* // padding: 30px; */
+      }
+      .close {
+        width: 70px;
+        height: 50px;
+        background-color: #444;
+        /* // background-color: var(--bclr); */
+        border: 1px solid black;
+        border-radius: 20px;
+        box-shadow: 0 5px 25px rgba(1 1 1/30%);
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.2s linear;
+        border: none;
+        color: #333;
+        margin-left: 20px;
+        outline: none;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        position: absolute;
+      }  
+        .icon {
+          width: 35px;
+          /* // z-index: 3; */
+          /* pointer-events: none; */
+
+          
+        }
+        path {
+            transition: 0.5s;
+          }
+
+      .pg-btn:hover,
+      .close:hover path {
+        fill: #333 !important;
+        transition: 0.4s ease;
+        z-index: 3999;
+        color: #e3e3e3;
+      }
+
+      .close::before {
+        content: "";
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background: var(--clr);
+        left: var(--x);
+        top: var(--y);
+        border-radius: 50%;
+        transition: 1s, left 0s, top 0s;
+      }
+
+      .close:hover::before {
+        width: 80px;
+        height: 80px;
+        z-index: -4;
+      }
+
+      .whots {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* height: 100%; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        margin-top: 300px !important;
+      }
+      .whot {
+        position: relative;
+        width: 200px;
+        height: 300px;
+        border-radius: 10px;
+        background: #ececec;
+        box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .c1 {
+        transform: translate(50px, 20px) rotate(5deg);
+      }
+
+      .c2 {
+        transform: translate(-5px, -10px) rotate(2.5deg);
+      }
+
+      .c3 {
+        transform: translate(-25px, 20px) rotate(2deg);
+      }
+
+      .c4 {
+        transform: translate(-40px, -10px) rotate(7.5deg);
+      }
+
+      .c5 {
+        transform: translate(-70px, 30px) rotate(-7.5deg);
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="click-effect" id="click-effect">
+        <div class="spike" style="--angle: 5deg; --distance: 30px"></div>
+        <div class="spike" style="--angle: 55deg; --distance: 31px"></div>
+        <div class="spike" style="--angle: 75deg; --distance: 27px"></div>
+        <div class="spike" style="--angle: 135deg; --distance: 30px"></div>
+        <div class="spike" style="--angle: 190deg; --distance: 28px"></div>
+        <div class="spike" style="--angle: 210deg; --distance: 32px"></div>
+        <div class="spike" style="--angle: 280deg; --distance: 31px"></div>
+        <div class="spike" style="--angle: 330deg; --distance: 30px"></div>
+      </div>
+    </div>
+    <div class="ticket-card">
+      <h1>Next Card</h1>
+      <div class="ticket-visual_visual" id="ticket">
+        <div class="left"></div>
+        <div class="right"></div>
+
+        <div class="ticket-visual-wrapper">
+          <div class="ticket-visual_profile">
+            <div class="ticket-profile_profile">
+              <img
+                src="../assets/Yuga-Labs-Bored-Ape-Yacht-Club-4466.jpg"
+                alt="madflows"
+                class="ticket-profile_image"
+              />
+
+              <div class="ticket-profile_text">
+                <p class="ticket-profile_name">folarin lawal</p>
+                <p class="ticket-profile_username">
+                  <span class="ticket-profile_githubicon">
+                    <img src="../assets/G.svg" width="10px" alt="github icon" />
+                  </span>
+                  madflows
+                </p>
+              </div>
+            </div>
+            <div class="ticket-event">
+              <img src="../assets/nextjs.png" width="400px" alt="Nextjs icon" />
+            </div>
+
+            <div class="ticket-visual_ticket-number-wrapper">
+              <div class="ticket-visual_ticket-number">NO 0124765</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="navArea">
+      <div class="whots" id="whots">
+        <button class="close" id="close" style="--clr: #e3e3e3">
+          <svg
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              class="pth"
+              d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z"
+              fill="rgba(255,255,255,1)"
+            ></path>
+          </svg>
+        </button>
+
+        <div class="whot c1"></div>
+        <div class="whot c2"></div>
+        <div class="whot c3"></div>
+        <div class="whot c4"></div>
+        <div class="whot c5"></div>
+      </div>
+      <div class="footer">2023 All rights reserved @ Bloc tag</div>
+    </div>
+
+    <script>
+      let ticketElm = document.getElementById("ticket");
+      let { x, y, width, height } = ticketElm.getBoundingClientRect();
+      let centerPoint = {
+        x: x + width / 2,
+        y: y + height / 2,
+      };
+
+      window.addEventListener("mousemove", (e) => {
+        let degreeX = (e.clientY - centerPoint.y) * 0.8;
+        let degreeY = (e.clientX - centerPoint.x) * -0.8;
+
+        ticketElm.style.transform = `
+    perspective(1000px) 
+    rotateX(${degreeX}deg) 
+    rotateY(${degreeY}deg)
+    `;
+      });
+
+      let animationInProgress = false;
+      let animationId;
+      document.body.addEventListener("click", (e) => {
+        let clickEffect = document.getElementById("click-effect");
+
+        if (animationInProgress) {
+          clearTimeout(animationId);
+          clickEffect.classList.remove("effect");
+          void clickEffect.offsetWidth;
+        }
+
+        clickEffect.style.top = e.clientY + "px";
+        clickEffect.style.left = e.clientX + "px";
+        clickEffect.classList.add("effect");
+        animationInProgress = true;
+
+        animationId = setTimeout(() => {
+          clickEffect.classList.remove("effect");
+          animationInProgress = false;
+        }, 750);
+      });
+
+      let btn = document.querySelectorAll('.close').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let btnWidth = btn.clientWidth;
+        let btnHeight = btn.clientHeight;
+        let transX = (x - btnWidth / 2);
+        let transY = (y - btnHeight / 2);
+        btn.style.transform = `translateX(${transX}px) translateY(${transY}px)`;
+
+        let mx = e.pageX - btn.offsetLeft;
+        let my = e.pageY - btn.offsetTop;
+        btn.style.setProperty('--x', mx + 'px');
+        btn.style.setProperty('--y', my + 'px');
+    })
+
+    btn.addEventListener('mouseout', (e) => {
+        btn.style.transform = '';
+    })
+})
+    </script>
+  </body>
+</html>

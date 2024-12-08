@@ -1,0 +1,46 @@
+<style>
+
+body{
+    background-color: green;
+}
+    .gtrans{
+        width: 200px !important;
+        height: 40px !important;
+        border: 3px solid #E84142 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  .goog-te-combo {
+    outline-color: #E84142 !important;
+    border-color: #E84142 !important;
+    padding: 7px !important;
+    color: #fff !important;
+    font-size: 1.5rem;
+    background-color: green;
+  }
+
+  .goog-te-combo option{
+    background-color: #E84142 !important;
+  }
+  #google_translate_element span {
+    display: none !important;
+  }
+
+  #google_translate_element .skiptranslate {
+    font-size: 0 !important;
+  }
+</style>
+<div class="gtrans">
+    <div id="google_translate_element"></div>
+</div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: "en" },
+      "google_translate_element"
+    )}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
